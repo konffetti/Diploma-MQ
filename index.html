@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог о творчестве, спорте и образе жизни</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
 </head>
 <body>
 
@@ -43,6 +44,9 @@
             <h1 class="header-title">
                 Блог о творчестве, спорте и образе жизни
             </h1>
+        </div>
+        <div class="header-burger">
+            <span class="burger-line"></span>
         </div>
     </header>
     
@@ -426,9 +430,56 @@
 
         </div>
     </div>
-
+    
     <div class="popup">
-        
+        <input type="checkbox" id="popup" class="popup-toggle">
+        <div class="popup-item">
+            <label for="popup" class="popup-close-bg"></label>
+            <div class="popup__content">
+                <label for="popup" class="popup-close">
+                    <img src="./svg/form-x.svg" alt="Крестик закрытия окна" class="popup-close-img">
+                </label>
+                <h3 class="aside-title">
+                    Ваш фидбек
+                </h3>
+                <form action="#0" class="feedback-form" method="post">
+                    <div class="feedback-group">
+                        <label for="feedback" class="feedback-label">
+                            Как часто вы заходите на сайт?
+                        </label>
+                        <select name="feedback" id="feedback" class="feedback-select">
+                            <option value="1">Каждый день</option>
+                            <option value="2" selected>Почти каждый день</option>
+                            <option value="3">Раз в неделю</option>
+                            <option value="4">Редко</option>
+                            <option value="5">Я здесь первый раз</option>
+                        </select>
+                    </div>
+                    <div class="feedback-radio-group">
+                        <div for="" class="feedback-label">
+                            Вы подписаны на e-mail рассылку?
+                        </div>
+                        <label class="feedback-checkbox">
+                            <input type="radio" class="radio" name="choice" id="yes" checked>
+                            <span class="radio-group">Да</span>
+                        </label>
+                        <label class="feedback-checkbox">
+                            <input type="radio" class="radio" name="choice" id="no">
+                            <span class="radio-group">Нет</span>
+                        </label>
+                    </div>
+                    <div class="feedback-group">
+                        <label for="textarea" class="feedback-label">
+                            Расскажите, какой контент вы хотели бы видеть на нашем сайте?
+                        </label>
+                        <textarea name="textarea" id="textarea" class="feedback-textarea" placeholder="Может, больше рецептов?"></textarea>
+                    </div>
+                    <button type="submit" class="feedback-button">Отправить</button>
+                </form>
+                
+            </div>
+        </div>
+        <!-- <label for="popup" class="btn">Открыть окно</label> -->
     </div>
     
     <footer class="footer">

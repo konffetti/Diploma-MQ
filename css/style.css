@@ -47,7 +47,7 @@ img {
   height: auto;
 } 
 
-input, button, textarea {
+input, button, textarea, select {
   font-family: inherit;
 }
 
@@ -162,6 +162,34 @@ ul li {
   text-align: center;
   color: #ffffff;
   z-index: 2;
+}
+
+/* burger */
+
+.header-burger {
+  position: absolute;
+  display: none;
+  top: 50px;
+  right: 30px;
+}
+
+.burger-line {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 20px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  z-index: 3;
+}
+
+.burger-line::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 6px;
+  left: 0;
+  border-top: 3px solid #fff;
 }
 
 /* header end */
@@ -345,23 +373,23 @@ ul li {
   background-color: #f4f7f6;
 }
 
-.search-form-field:focus, .email-form-field:focus {
+.search-form-field:focus, .email-form-field:focus, .feedback-select:focus, .radio:focus + .radio-group::before, .feedback-textarea:focus {
   outline: 1px solid #b59f5b;
 }
 
 .search-button {
   width: 48px;
   height: 48px;
-  background: url('https://netology-code.github.io/html-2-diploma/sources/images/search.svg') center center no-repeat;
+  background: url('../svg/search.svg') center center no-repeat;
   background-color: #b59f5b;
   background-size: 18px;
 }
 
-.search-button:hover, .email-button:hover {
+.search-button:hover, .email-button:hover, .feedback-button:hover {
   background-color: #323232;
 }
 
-.search-button:focus, .email-button:focus {
+.search-button:focus, .email-button:focus, .feedback-button:hover {
   outline-color: #323232;
 }
 
@@ -370,7 +398,7 @@ ul li {
   margin-bottom: 18px;
 }
 
-.email-button {
+.email-button, .feedback-button {
   width: 100%;
   height: 48px;
   padding: 12px;
@@ -431,6 +459,129 @@ ul li {
 }
 
 /* aside end */
+
+/* popup start */
+
+.popup-item  {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 394px;
+  padding: 50px 30px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.popup-close {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  cursor: pointer;
+}
+
+.popup-close-img {
+  width: 18px;
+  height: 18px;
+}
+
+.popup-toggle:checked + .popup-item {
+  display: flex;
+}
+
+.popup-close-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.feedback-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+
+.feedback-label {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.feedback-select {
+  display: inline-block;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 18px;
+  font-size: 13px;
+  opacity: 0.5;
+  background: url(../svg/form-arrows.svg) center right 15px/15px no-repeat #f4f7f6;
+  outline: none;
+}
+
+.feedback-radio-group {
+  margin-bottom: 30px;
+}
+
+.radio {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+}
+
+.radio-group {
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.radio-group::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background: url(../svg/form-empty-circle.svg) center/18px no-repeat;
+  vertical-align: middle;
+}
+
+.radio:checked + .radio-group::before {
+  background-image: url(../svg/form-circle.svg);
+}
+
+.radio:focus + .radio-group::before {
+  outline-offset: 2px;
+}
+
+.feedback-textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 130px;
+  padding: 18px;
+  background: #f4f7f6;
+  outline: none;
+  /* resize: none; */
+}
+
+.feedback-textarea::-webkit-resizer {
+  display: none;
+}
+
+/* popup end */
 
 
 /* footer start */

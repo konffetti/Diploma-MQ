@@ -1,0 +1,22 @@
+@media (max-width: 767px) {
+
+    .container {
+        padding: 0 35px;
+    }
+
+    .header-wrapper {
+        padding-top: 50px;
+    }
+
+    .header-title {
+        font-size: 40px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .header-burger {
+        display: block;
+    }
+}
