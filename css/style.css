@@ -2,8 +2,7 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'),
-       url('../fonts/OpenSans-Regular.woff') format("woff"),
+  src: url('../fonts/OpenSans-Regular.woff') format("woff"),
        url('../fonts/OpenSans-Regular.woff2') format("woff2");
   font-display: swap;
 }
@@ -12,20 +11,24 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans'),
-       url('../fonts/OpenSans-Bold.woff') format("woff"),
+  src: url('../fonts/OpenSans-Bold.woff') format("woff"),
        url('../fonts/OpenSans-Bold.woff2') format("woff2");
   font-display: swap;
 }
 
-/* All */
+/* Global */
 
-/* сделать футер, прибитый книзу через flex-grow */
 /* переделать модальное окно */
 
-body {
-  width: 100%;
+html {
   height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -48,8 +51,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
-} 
+}
 
 input, button, textarea, select {
   font-family: inherit;
@@ -77,12 +79,15 @@ ul li {
   list-style: none;
 }
 
-/* Common styles */
-
 .container {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto 65px;
+  margin: 0 auto;
   padding: 0 15px;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .visually-hidden {
@@ -96,13 +101,75 @@ ul li {
   overflow: hidden;
 }
 
-/* header start */
+.button {
+  width: 100%;
+  height: 48px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #b59f5b;
+}
+
+.button:hover {
+  background-color: #323232;
+}
+
+.button:focus {
+  outline-color: #323232;
+}
+
+.section-title {
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  margin: 11px auto 0;
+  width: 66px;
+  height: 3px;
+  background-color: #b59f5b;
+  opacity: 0.4;
+}
+
+.article-title {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.article-title:hover {
+  color: #b59f5b;
+}
+
+.tags-text {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #b59f5b;
+}
+
+.tags-text:hover {
+  text-decoration: underline;
+}
+
+
+/* Header */
 
 .header {
   position: relative;
   min-height: 450px;
   margin-bottom: 60px;
-  background: url('https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg') center no-repeat;
+  background-image: url('../images/banner-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
   background-size: cover;
   background-color: #525252;
 }
@@ -173,8 +240,8 @@ ul li {
 .header-burger {
   position: absolute;
   display: none;
-  top: 50px;
-  right: 30px;
+  top: 52px;
+  right: 35px;
 }
 
 .burger-line {
@@ -202,11 +269,78 @@ ul li {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 65px;
 }
+
+/* Trend */
+
+.trend {
+  width: 100%;
+  max-width: 1660px;
+  margin: 0 auto;
+  margin-bottom: 65px;
+}
+
+.trend-title {
+  margin-bottom: 30px;
+}
+
+.trend-list {
+  display: flex;
+  gap: 5px;
+}
+
+.trend-item {
+  position: relative;
+  width: 25%;
+}
+
+.trend-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.trend-image {
+  object-fit: cover;
+}
+
+.trend-content {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  padding: 40px 35px 35px;
+  border: 3px solid #b59f5b;
+  z-index: 3;
+}
+
+.trend-content-title {
+  color: #ffffff;
+}
+
+.trend-tags-group {
+  margin-bottom: 15px;
+}
+
+.trend-tags-text {
+  margin-right: 10px;
+}
+
+.trend-tags-text:last-child {
+  margin-right: 0;
+}
+
 
 /* main start */
 
 .posts {
+  width: 67%;
   display: flex;
   flex-direction: column;
 }
@@ -214,7 +348,6 @@ ul li {
 .article {
   display: flex;
   align-items: flex-start;
-  max-width: 778px;
   margin-bottom: 60px;
 }
 
@@ -223,7 +356,7 @@ ul li {
 }
 
 .article-pict {
-  max-width: 381px;
+  width: calc(53% - 30px);
   margin-right: 30px;
 }
 
@@ -232,7 +365,7 @@ ul li {
 }
 
 .article-list {
-  max-width: 367px;
+  width: 47%;
 }
 
 .article-tags {
@@ -255,20 +388,8 @@ ul li {
   margin-right: 0;
 }
 
-.article-tags-text:hover {
-  text-decoration: underline;
-}
-
-.article-title {
+.post-title {
   margin-bottom: 27px;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.article-title:hover {
-  color: #b59f5b;
 }
 
 .article-item {
@@ -303,15 +424,15 @@ ul li {
 
 /* aside start */
 
-.aside {
-  max-width: 272px;
+.sidebar {
+  width: calc(33% - 118px);
 }
 
-.aside-section {
+.sidebar-section {
   margin-bottom: 58px;
 }
 
-.aside-title {
+.sidebar-title {
   position: relative;
   margin-bottom: 22px;
   font-size: 14px;
@@ -320,7 +441,7 @@ ul li {
   text-align: center;
 }
 
-.aside-title::after {
+.sidebar-title::after {
   content: '';
   display: block;
   margin: 11px auto 0;
@@ -368,7 +489,7 @@ ul li {
 }
 
 .search-form-field {
-  width: 224px;
+  flex-grow: 1;
 }
 
 .search-form-field, .email-form-field {
@@ -382,35 +503,19 @@ ul li {
 }
 
 .search-button {
-  width: 48px;
+  min-width: 48px;
+  max-width: 48px;
   height: 48px;
-  background: url('../svg/search.svg') center center no-repeat;
+  background-image: url('../images/svg/search.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-color: #b59f5b;
   background-size: 18px;
-}
-
-.search-button:hover, .email-button:hover, .feedback-button:hover {
-  background-color: #323232;
-}
-
-.search-button:focus, .email-button:focus, .feedback-button:hover {
-  outline-color: #323232;
 }
 
 .email-form-field {
   width: 100%;
   margin-bottom: 18px;
-}
-
-.email-button, .feedback-button {
-  width: 100%;
-  height: 48px;
-  padding: 12px;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #b59f5b;
 }
 
 .tags-container {
@@ -421,7 +526,6 @@ ul li {
 
 .tags-item {
   display: inline-block;
-  flex-grow: 1;
   padding: 4px 10px;
   border: 3px solid #eeeeee;
   text-align: center;
@@ -463,6 +567,92 @@ ul li {
 }
 
 /* aside end */
+
+/* Shopping */
+
+.shopping {
+  margin-bottom: 35px;
+}
+
+.shopping-title {
+  margin-bottom: 30px;
+}
+
+.shopping-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 66px;
+}
+
+.shopping-item {
+  width: 100%;
+  padding: 20px;
+}
+/* 
+.shopping-item::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50%;
+  border: 3px solid #b59f5b;
+} */
+
+.shopping-image {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.shopping-subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.shopping-text {
+  margin-bottom: 28px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.shopping-link {
+  color: #b59f5b;
+}
+
+.shopping-link:hover {
+  text-decoration: underline;
+}
+
+.product-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-price-old {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration: line-through;
+}
+
+.product-price-new {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.shopping-button {
+  width: 140px;
+  height: 48px;
+  padding: 15px;
+  text-align: center;
+}
 
 /* popup start */
 
@@ -615,7 +805,7 @@ ul li {
 }
 
 .footer-link-dribbble {
-  background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg');
+  background-image: url('../images/svg/001-dribbble.svg');
 }
 
 .footer-link-pinterest {
@@ -637,3 +827,5 @@ ul li {
 }
 
 /* footer end */
+
+

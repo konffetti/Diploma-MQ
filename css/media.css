@@ -1,22 +1,127 @@
-@media (max-width: 767px) {
+/* Media */
 
-    .container {
-        padding: 0 35px;
-    }
+@media (min-width: 641px) and (max-width: 1199px) {
+  .container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
 
-    .header-wrapper {
-        padding-top: 50px;
-    }
+  .header {
+    margin-bottom: 45px;
+    min-height: 392px;
+    background-image: url('../images/banner-bg-tablet.jpg');
+    background-position: bottom center;
+  }
 
-    .header-title {
-        font-size: 40px;
-    }
+  .header-wrapper {
+    padding-top: 40px;
+  }
 
-    .header-nav {
-        display: none;
-    }
+  .header-title {
+    font-size: 40px;
+    line-height: 55px;
+  }
 
-    .header-burger {
-        display: block;
-    }
+  .trend {
+    margin-bottom: 45px;
+  }
+
+  .trend-title {
+    margin-bottom: 18px;
+  }
+
+  .trend-list {
+    flex-wrap: wrap;
+  }
+
+  .trend-item {
+    width: calc(50% - 2.5px);
+  }
+
+  .trend-content-title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .posts {
+    width: 90%;
+    margin-right: 10%;
+  }
+
+  .article-pict {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .article-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article-list {
+    width: 100%;
+  }
+
+  .article-item {
+    margin-bottom: 36px;
+  }
+
+  .article {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .article:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #eeeeee;
+  }
+
+  .sidebar {
+    width: 38%;
+  }
+
+  .shopping-image-list {
+    flex-wrap: wrap;
+  }
+
+  .shopping-list {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .shopping-item {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1199px),
+(max-width: 640px) {
+  .trend-image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .trend-list {
+    flex-direction: column;
+  }
+
+  .trend-item {
+    width: 100%;
+  }
+
+  .shopping-list {
+    flex-direction: column;
+  }
 }
