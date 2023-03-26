@@ -1,9 +1,13 @@
 /* Media */
 
 @media (min-width: 641px) and (max-width: 1199px) {
+  html {
+    font-size: 53%;
+  }
+
   .container {
-    padding-left: 34px;
-    padding-right: 34px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 
   .header {
@@ -23,11 +27,8 @@
     line-height: 55px;
   }
 
-  .trend {
-    margin-bottom: 45px;
-  }
-
   .trend-title {
+    font-size: 18px;
     margin-bottom: 18px;
   }
 
@@ -37,15 +38,19 @@
 
   .trend-item {
     width: calc(50% - 2.5px);
+    min-height: 249px;
   }
 
-  .trend-content-title {
-    font-size: 17px;
-    line-height: 22px;
+  .content {
+    width: 100%;
+    max-width: 736px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .posts {
-    width: calc(61% - 36px);
+    width: 52%;
+    margin-right: 36px;
   }
 
   .article-pict {
@@ -68,11 +73,12 @@
 
   .article {
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
 
-  .sidebar {
-    width: 39%;
+  .article:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
   }
 
   .shopping-image-list {
@@ -87,14 +93,26 @@
   .shopping-item {
     width: calc(50% - 12px);
   }
+
+  .popup-close {
+    top: -36px;
+    width: 28px;
+    height: 28px;
+  }
 }
 
-@media (min-width: 641px) and (max-width: 1199px),
-(max-width: 640px) {
-  .trend-image {
-    width: 100%;
-    object-fit: cover;
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
+
+  .trend-item {
+    width: calc(25% - 3.75px);
   }
+
+  .trend-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1199px) {
 
   .header-nav {
     display: none;
@@ -104,29 +122,36 @@
     display: block;
   }
 
-  .article:not(:last-child) {
+  .article {
     padding-bottom: 20px;
     border-bottom: 3px solid #eeeeee;
   }
 
-  .shopping-subtitle {
-    font-size: 17px;
-    line-height: 22px;
+  .shopping-title {
+    margin-bottom: 28px;
   }
 
+  .shopping-subtitle {
+    font-size: 17px;
+    line-height: 1.3;
+  }
 }
 
 @media (max-width: 640px) {
 
+  html {
+    font-size: 50%;
+  }
+
   .header {
+    display: flex;
+    align-items: center;
     height: 100vh;
     background-image: url(../images/banner-mobile.jpg);
-    margin-bottom: 45px;
   }
 
   .header-logo {
     margin: 0 auto;
-    padding-top: 230px;
   }
 
   .header-ligo-pict {
@@ -135,21 +160,9 @@
 
   .header-title {
     max-width: 280px;
-    padding-top: 45px;
+    padding-top: 44px;
     font-size: 26px;
-    line-height: 36px;
-  }
-
-  .section-title {
-    font-size: 16px;
-  }
-
-  .article-title {
-    font-size: 16px;
-  }
-
-  .trend-title {
-    margin-bottom: 25px;
+    line-height: 1.4;
   }
 
   .trend-list {
@@ -158,18 +171,16 @@
 
   .trend-item {
     width: 100%;
+    padding: 15px;
   }
 
   .trend-content {
-    left: 15px;
-    bottom: 15px;
-    width: calc(100% - 30px);
-    padding: 20px 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .content {
     display: block;
-    margin-bottom: 45px;
   }
 
   .posts {
@@ -178,7 +189,8 @@
 
   .article {
     flex-direction: column;
-    width: 100%;
+    max-width: 381px;
+    margin: 0 auto;
     margin-bottom: 36px;
   }
 
@@ -189,7 +201,7 @@
   .article-pict {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
   }
 
   .article-list {
@@ -211,6 +223,8 @@
 
   .sidebar {
     width: 100%;
+    max-width: 381px;
+    margin: 0 auto;
   }
 
   .sidebar-section {
@@ -226,10 +240,31 @@
   }
 
   .shopping-content {
-    padding-top: 53px;
+    padding-top: 54px;
   }
 
-  .popup__content {
+  .shopping-item {
+    width: 100%;
+    max-width: 381px;
+    margin: 0 auto;
+  }
+
+  .popup-content {
     width: 330px;
+    padding: 30px;
   }
 }
+
+@media (max-width: 640px) and (orientation: landscape) {
+
+  .trend-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .trend-item {
+    width: calc(50% - 2.5px);
+  }
+
+}
+
