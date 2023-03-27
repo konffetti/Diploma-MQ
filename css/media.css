@@ -184,6 +184,7 @@
     padding-top: 30px;
     padding-bottom: 46px;
     background-image: url(../images/banner-mobile.jpg);
+    background-position: center bottom;
   }
 
   .header-logo {
