@@ -1,5 +1,30 @@
 /* Media */
 
+@media (max-width: 1199px) {
+
+  .header-list {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+
+  .article {
+    padding-bottom: 16px;
+    border-bottom: 3px solid #eeeeee;
+  }
+
+  .shopping-title {
+    margin-bottom: 28px;
+  }
+
+  .shopping-subtitle {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+}
+
 @media (min-width: 641px) and (max-width: 1199px) {
   html {
     font-size: 53%;
@@ -17,28 +42,47 @@
     background-position: bottom center;
   }
 
-  .header-wrapper {
+  .header-nav {
     padding-top: 40px;
   }
 
+  .header-logo {
+    width: 159px;
+  }
+
   .header-title {
-    padding-top: 80px;
+    padding-top: 90px;
     font-size: 40px;
     line-height: 55px;
   }
 
+  .header-burger {
+    top: 52px;
+    right: 34px;
+  }
+
+  .trend {
+    margin-bottom: 45px;
+  }
+
   .trend-title {
     font-size: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .trend-list {
     flex-wrap: wrap;
+    gap: 2px 3px;
   }
 
   .trend-item {
-    width: calc(50% - 2.5px);
+    width: calc(50% - 1.5px);
     min-height: 249px;
+  }
+
+  .trend-content {
+    padding-left: 30px;
+    padding-bottom: 36px;
   }
 
   .content {
@@ -49,26 +93,8 @@
   }
 
   .posts {
-    width: 52%;
-    margin-right: 36px;
-  }
-
-  .article-pict {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-
-  .article-img {
-    object-fit: cover;
-  }
-
-  .article-list {
-    width: 100%;
-  }
-
-  .article-item {
-    margin-bottom: 36px;
+    width: 56%;
+    margin-right: 35px;
   }
 
   .article {
@@ -81,8 +107,32 @@
     border-bottom: none;
   }
 
-  .shopping-image-list {
-    flex-wrap: wrap;
+  .article-pict {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .article-img {
+    width: 100%;
+    max-width: 391px;
+    object-fit: cover;
+  }
+
+  .article-list {
+    width: 100%;
+  }
+
+  .post-title {
+    margin-bottom: 34px;
+  }
+
+  .article-item {
+    margin-bottom: 30px;
+  }
+
+  .shopping {
+    margin-bottom: 48px;
   }
 
   .shopping-list {
@@ -92,6 +142,14 @@
 
   .shopping-item {
     width: calc(50% - 12px);
+  }
+
+  .image-wrapper {
+    min-height: 227px;
+  }
+
+  .footer-menu {
+    margin-bottom: 42px;
   }
 
   .popup-close {
@@ -112,31 +170,6 @@
   }
 }
 
-@media (max-width: 1199px) {
-
-  .header-nav {
-    display: none;
-  }
-
-  .header-burger {
-    display: block;
-  }
-
-  .article {
-    padding-bottom: 20px;
-    border-bottom: 3px solid #eeeeee;
-  }
-
-  .shopping-title {
-    margin-bottom: 28px;
-  }
-
-  .shopping-subtitle {
-    font-size: 17px;
-    line-height: 1.3;
-  }
-}
-
 @media (max-width: 640px) {
 
   html {
@@ -147,30 +180,40 @@
     display: flex;
     align-items: center;
     height: 100vh;
+    margin-bottom: 37px;
+    padding-top: 30px;
+    padding-bottom: 46px;
     background-image: url(../images/banner-mobile.jpg);
   }
 
   .header-logo {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .header-ligo-pict {
-    width: 280px;
+    width: 270px;
   }
 
   .header-title {
     max-width: 280px;
-    padding-top: 44px;
+    padding-top: 32px;
     font-size: 26px;
     line-height: 1.4;
   }
 
+  .trend {
+    margin-bottom: 40px;
+  }
+
   .trend-list {
     flex-direction: column;
+    gap: 3px;
   }
 
   .trend-item {
     width: 100%;
+    min-height: 231px;
     padding: 15px;
   }
 
@@ -181,6 +224,7 @@
 
   .content {
     display: block;
+    margin-bottom: 38px;
   }
 
   .posts {
@@ -189,9 +233,10 @@
 
   .article {
     flex-direction: column;
+    width: 100%;
     max-width: 381px;
     margin: 0 auto;
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
 
   .article:last-child {
@@ -201,7 +246,7 @@
   .article-pict {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .article-list {
@@ -209,16 +254,20 @@
   }
 
   .post-title {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .article-item {
-    margin-bottom: 22px;
+    margin-bottom: 11px;
   }
 
   .article-text {
     font-size: 14px;
     line-height: 1.5;
+  }
+
+  .article-text p:not(:last-child) {
+    margin-bottom: 4px;
   }
 
   .sidebar {
@@ -228,19 +277,32 @@
   }
 
   .sidebar-section {
-    margin-bottom: 45px;
+    margin-bottom: 42px;
   }
 
   .sidebar-title {
     font-size: 16px;
   }
 
+  .subcsribe-section {
+    margin-bottom: 38px;
+  }
+
+  .tags-section {
+    margin-bottom: 38px;
+  }
+
+  .shopping {
+    margin-bottom: 42px;
+  }
+
   .shopping-list {
     flex-direction: column;
+    row-gap: 25px;
   }
 
   .shopping-content {
-    padding-top: 54px;
+    padding-top: 48px;
   }
 
   .shopping-item {
@@ -249,13 +311,21 @@
     margin: 0 auto;
   }
 
+  .image-wrapper {
+    min-height: 285px;
+  }
+
+  .footer-menu {
+    margin-bottom: 40px;
+  }
+
   .popup-content {
     width: 330px;
     padding: 30px;
   }
 }
 
-@media (max-width: 640px) and (orientation: landscape) {
+@media (max-width: 926px) and (orientation: landscape) {
 
   .trend-list {
     flex-direction: row;
@@ -264,6 +334,15 @@
 
   .trend-item {
     width: calc(50% - 2.5px);
+  }
+
+  .popup-content {
+    width: 640px;
+    background-color: burlywood;
+  }
+
+  .feedback-label {
+    color: blueviolet;
   }
 
 }
