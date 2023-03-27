@@ -333,16 +333,7 @@
   }
 
   .trend-item {
-    width: calc(50% - 2.5px);
-  }
-
-  .popup-content {
-    width: 640px;
-    background-color: burlywood;
-  }
-
-  .feedback-label {
-    color: blueviolet;
+    width: calc(50% - 1.5px);
   }
 
 }
