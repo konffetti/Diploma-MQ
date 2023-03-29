@@ -339,3 +339,19 @@
 
 }
 
+
+@media (max-height: 480px) {
+
+  .feedback-textarea {
+    min-height: 50px;
+  }
+
+  .feedback-group {
+    margin-bottom: 15px;
+  }
+
+  .feedback-radio-group {
+    margin-bottom: 15px;
+  }
+}
+
