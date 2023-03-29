@@ -1,4 +1,4 @@
-  @font-face {
+@font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -141,7 +141,7 @@ ul li {
   text-transform: uppercase;
 }
 
-.article-title:hover {
+.article-link:hover {
   color: #b59f5b;
 }
 
@@ -161,8 +161,9 @@ ul li {
 
 .header {
   position: relative;
-  min-height: 450px;
   margin-bottom: 56px;
+  padding-top: 27px;
+  padding-bottom: 140px;
   background-image: url('../images/banner-bg.jpg');
   background-repeat: no-repeat;
   background-position: top center;
@@ -186,7 +187,6 @@ ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 27px;
   z-index: 2;
 }
 
@@ -222,8 +222,9 @@ ul li {
   position: relative;
   width: 100%;
   max-width: 680px;
-  margin: 0 auto;
-  padding-top: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 105px;
   font-weight: 700;
   font-size: 45px;
   line-height: 1.6;
@@ -266,9 +267,6 @@ ul li {
 /* Trend */
 
 .trend {
-  width: 100%;
-  max-width: 1660px;
-  margin: 0 auto;
   margin-bottom: 62px;
 }
 
@@ -337,17 +335,13 @@ ul li {
 }
 
 .trend-tags-group {
+  display: flex;
   margin-bottom: 10px;
 }
 
-.trend-tags-text {
+.trend-tags-item:not(:last-child) {
   margin-right: 10px;
 }
-
-.trend-tags-text:last-child {
-  margin-right: 0;
-}
-
 
 /* Main */
 
@@ -390,7 +384,7 @@ ul li {
   margin-bottom: 8px;
 }
 
-.article-tags-item {
+.article-tags-item:not(:last-child) {
   margin-right: 17px;
 }
 
@@ -399,10 +393,6 @@ ul li {
   font-weight: 700;
   text-transform: uppercase;
   color: #b59f5b;
-}
-
-.article-tags-text:last-child {
-  margin-right: 0;
 }
 
 .post-title {
@@ -439,7 +429,7 @@ ul li {
   width: 272px;
 }
 
-.sidebar-section {
+.sidebar-section:not(:last-child) {
   margin-bottom: 60px;
 }
 
@@ -473,8 +463,6 @@ ul li {
 }
 
 .newpost-content {
-  display: flex;
-  flex-direction: column;
   margin-left: 20px;
 }
 
@@ -883,13 +871,10 @@ ul li {
 
   .header {
     margin-bottom: 45px;
-    min-height: 392px;
+    padding-top: 43px;
+    padding-bottom: 120px;
     background-image: url('../images/banner-bg-tablet.jpg');
     background-position: bottom center;
-  }
-
-  .header-nav {
-    padding-top: 40px;
   }
 
   .header-logo {
@@ -897,7 +882,7 @@ ul li {
   }
 
   .header-title {
-    padding-top: 90px;
+    margin-top: 90px;
     font-size: 40px;
     line-height: 55px;
   }
@@ -1044,7 +1029,7 @@ ul li {
 
   .header-title {
     max-width: 280px;
-    padding-top: 32px;
+    margin-top: 32px;
     font-size: 26px;
     line-height: 1.4;
   }
@@ -1081,8 +1066,6 @@ ul li {
   .article {
     flex-direction: column;
     width: 100%;
-    max-width: 381px;
-    margin: 0 auto;
     margin-bottom: 34px;
   }
 
@@ -1094,6 +1077,10 @@ ul li {
     width: 100%;
     margin-right: 0;
     margin-bottom: 12px;
+  }
+
+  .article-img {
+    width: 100%;
   }
 
   .article-list {
@@ -1119,11 +1106,9 @@ ul li {
 
   .sidebar {
     width: 100%;
-    max-width: 381px;
-    margin: 0 auto;
   }
 
-  .sidebar-section {
+  .sidebar-section:not(:last-child) {
     margin-bottom: 42px;
   }
 
